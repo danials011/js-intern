@@ -178,7 +178,7 @@ input:focus {
 
 .movie-element__image img {
     height: 100%;
-    width: 100%;
+    width: 25%;
     object-fit: cover;
 }
 
