@@ -5,28 +5,23 @@ const HEAL_VALUE = 25;
 
 const MODE_ATTACK = "ATTACK"; // MODE_ATTACK = 0
 const MODE_STRONG_ATTACK = "STRONG_ATTACK"; // MODE_STRONG_ATTACK = 1
-const LOG_EVENT_PLAYER_ATTACK = "PLAYER_ATTACK";
-const LOG_EVENT_PLAYER_STRONG_ATTACK = "PLAYER_STRONG_ATTACK";
-const LOG_EVENT_MONSTER_ATTACK = "MONSTER_ATTACK";
-const LOG_EVENT_PLAYER_HEAL = "PLAYER_HEAL";
-const LOG_EVENT_GAME_OVER = "GAME_OVER";
 
 function getMaxLifeValues() {
     const enteredValue = prompt("Maximum life for you and the monster.", "100");
     let parsedValue = parseInt(enteredValue);
-    if (isNaN(parsedValue) || parsedValue <= 0) {
+    if (isNaN(parsedValue) || parsedValue <= 0) { // check two conditions
         throw { message: "Invalid user input, not a number." };
     }
-    return parsedValue;
+    return parsedValue; // return a number
 }
 
 let chosenMaxLife;
 
 try {
     chosenMaxLife = getMaxLifeValues();
-} catch (error) {
+} catch (error) { // error handling
     console.log(error);
-    chosenMaxLife = 100;
+    chosenMaxLife = 100; // set default case for max life = 100
     alert(
         "You entered an invalid input. So a default value of 100 is used instead."
     );
@@ -35,8 +30,6 @@ try {
 let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
 let hasBonusLife = true;
-let battleLog = [];
-let lastLoggedEntry;
 
 adjustHealthBars(chosenMaxLife);
 
@@ -65,26 +58,22 @@ function endRound() {
         alert("Draw match");
     }
     if (currentMonsterHealth <= 0 || currentPlayerHealth <= 0) {
-        reset();
+        reset(); // reset game since there's a result
     }
 }
 
 function attackMonster(attackMode) {
+    // Format let variable = condition ? value_for_true_condition : value_for_false_condition
     let maxDamage =
         attackMode === MODE_ATTACK ? ATTACK_VALUE : STRONG_ATTACK_VALUE;
-    let logEvent =
-        attackMode === MODE_ATTACK
-            ? LOG_EVENT_PLAYER_ATTACK
-            : LOG_EVENT_PLAYER_STRONG_ATTACK;
-    // if (attackMode === MODE_ATTACK) {
-    //     maxDamage = ATTACK_VALUE;
-    //     logEvent = LOG_EVENT_PLAYER_ATTACK;
-    // } else if (attackMode === MODE_STRONG_ATTACK) {
-    //     maxDamage = STRONG_ATTACK_VALUE;
-    //     logEvent = LOG_EVENT_PLAYER_STRONG_ATTACK;
-    // }
+    // Translation to normal if-else block
+    if (attackMode === MODE_ATTACK) {
+        maxDamage = ATTACK_VALUE;
+    } else {
+        maxDamage = STRONG_ATTACK_VALUE;
+    }
     const damage = dealMonsterDamage(maxDamage);
-    currentMonsterHealth -= damage;
+    currentMonsterHealth -= damage; // currentMonsterHealth = currentMonsterHealth - damage;
     endRound();
 }
 
