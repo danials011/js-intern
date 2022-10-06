@@ -1,0 +1,42 @@
+body {
+    margin-top: 3rem;
+    font-family: "Open Sans", sans-serif;
+    background-color: #ffe206;
+    font-size: 1.25rem;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+}
+
+button {
+    font: inherit;
+    padding: 0.75rem;
+    width: 12rem;
+    background-color: #ffe206;
+    border: transparent;
+    border-radius: 8px;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+button:hover {
+    background-color: #ffc106;
+}
+
+#body-card {
+    width: 50%;
+    text-align: center;
+    padding: 2rem;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
+
+#current-count {
+    margin-bottom: 2rem;
+}
