@@ -32,8 +32,10 @@ let currentTowerData = towerData;
 renderTowerList();
 
 /* YOUR TASK:
-A. Create a function to filter the list of towers based on the towerData (provided in data.js).
-HINT: Embrase the usage of control structures (if-else and loop).
+A. Create a function to filter the list of towers based on the towerData variable (provided in data.js).
+HINT: Reset the currentTowerData before any filtering.
+Embrase the usage of control structures (if-else and loop).
+And also use the .push function to add item into the array
 TODO: Complete the following function */
 function filterTowerList(filterMode) {
 
@@ -43,9 +45,9 @@ function filterTowerList(filterMode) {
 HINT: Use loop to call the renderTowerListItem function for single tower list item
 TODO: Complete the following function */
 function renderTowerList() {
-
+    towerListElement.innerHTML = ""; // Add this line to reset the tower list element
 }
 
 /* C. Link the four buttons with the render button by passing the filterMode parameter with .bind method */
 
-// Start your code below
+// End of the code
