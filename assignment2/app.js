@@ -27,8 +27,12 @@ function renderTowerListItem(tower) {
     towerListElement.append(newTowerElement);
 }
 
+// Begin the current tower data on the first load with the master data from data.js
+let currentTowerData = towerData;
+renderTowerList();
+
 /* YOUR TASK:
-A. Create a function to filter the list of towers based on the towerData variable (provided in data.js).
+A. Create a function to filter the list of towers based on the towerData (provided in data.js).
 HINT: Embrase the usage of control structures (if-else and loop).
 TODO: Complete the following function */
 function filterTowerList(filterMode) {
