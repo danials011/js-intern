@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <script src="data.js" defer></script>
+        <script src="app.js" defer></script>
+        <title>Tower Explorer</title>
+    </head>
+    <body>
+        <header>
+            <h1>Tower Explorer</h1>
+        </header>
+        <main>
+            <section id="sec-filter">
+                <p>Filter selection</p>
+                <div>
+                    <button type="button" id="btn-view-all-tower">View all</button>
+                    <button type="button" id="btn-lower-500m">Lower than 500m</button>
+                    <button type="button" id="btn-greater-100floors">Has more than 100 floors</button>
+                    <button type="button" id="btn-completion-2010-later">Completed later than 2010</button>
+                </div>
+            </section>
+            <section>
+                <ul id="tower-list">
+                </ul>
+            </section>
+        </main>
+    </body>
+</html>
